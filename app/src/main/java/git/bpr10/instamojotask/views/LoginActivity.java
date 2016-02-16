@@ -149,7 +149,7 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
         View focusView = null;
 
         // Check for a valid password, if the user entered one.
-        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
+        if (TextUtils.isEmpty(password) || !isPasswordValid(password)) {
             mPasswordView.setError(getString(R.string.error_invalid_password));
             focusView = mPasswordView;
             cancel = true;
@@ -190,7 +190,7 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
                         // match password
                         ParseObject obj = scoreList.get(0);
                         if (mPasswordView.getText().toString().equals(obj.get(Utils.ParseConstants.PARSE_USER_PWD))) {
-                            openHomeActivity((String) obj.get(Utils.ParseConstants.PARSE_USER_EMAIL));
+                            openHomeActivity((String) obj.get(Utils.ParseConstants.PARSE_USER_EMAIL), (String) obj.get(Utils.ParseConstants.NAME));
                         } else {
                             mPasswordView.setError(getString(R.string.error_incorrect_password));
                             mPasswordView.requestFocus();
@@ -210,7 +210,7 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
                                     showToast(R.string.error_common);
                                     return;
                                 }
-                                openHomeActivity(mEmailView.getText().toString());
+                                openHomeActivity(mEmailView.getText().toString(), null);
                             }
                         });
                     }
@@ -220,9 +220,10 @@ public class LoginActivity extends BaseActivity implements LoaderCallbacks<Curso
         }
     }
 
-    private void openHomeActivity(String email) {
+    private void openHomeActivity(String email, String pName) {
         Intent i = new Intent(LoginActivity.this, HomeActivity.class);
         i.putExtra(Utils.Key.EMAIL, email);
+        i.putExtra(Utils.ParseConstants.NAME, pName);
         startActivity(i);
         finish();
     }
