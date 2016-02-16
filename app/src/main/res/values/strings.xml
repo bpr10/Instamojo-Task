@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">InstamojoTask</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="label_add_contact">Add Contact</string>
+    <string name="label_get_contact">Get Contacts</string>
+    <string name="toast_max_limit">You can select maximun 5 contacts. \n Unselect some to choose this one.</string>
+
+
+    <string name="parse_app_id">2PUxo322v8B0ZtUtCQKn8Gm6di0OLFkhSRMvM8b5</string>
+    <string name="parse_client_key">jwTzRy9yQvVmwHg4bSa7IFRNW3n7pCtLdJ3998ZO</string>
+    <string name="progress_common">Saving your data</string>
+    <string name="progress_wait">please_wait</string>
+    <string name="error_common">Something went wrong! Please try again</string>
+    <string name="label_send_push">Send Push</string>
+    <string name="error_no_saved_contacts">You dont have any saved contacts. \n Add some contacts to view.</string>
+    <string name="save">Save</string>
+
+</resources>
